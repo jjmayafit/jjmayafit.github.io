@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JJ Maya · Links</title>
+<title>JJ Maya · Physique Coach</title>
+<meta name="description" content="JJ Maya, physique coach for busy professionals. Apply for 1:1 online coaching." />
+<meta name="theme-color" content="#0A0A0A" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FF5A1F'/%3E%3Ctext x='6' y='56' font-family='Impact,Anton,Arial Narrow,sans-serif' font-size='44' fill='%230A0A0A'%3EJM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0907;
-    --bg-2: #14120e;
-    --ink: #f4ede0;
-    --ink-dim: #8a8277;
-    --gold: #c9a96a;
-    --gold-bright: #e8c988;
-    --line: rgba(201, 169, 106, 0.18);
-    --line-strong: rgba(201, 169, 106, 0.35);
-    --card: rgba(255, 255, 255, 0.02);
+    --bg: #0A0A0A;
+    --panel: #1A1A1A;
+    --panel-hover: #222222;
+    --ink: #F5F5F5;
+    --ink-soft: #E5E5E5;
+    --ink-dim: #A3A3A3;
+    --ink-mute: #B5B5B5;
+    --accent: #FF5A1F;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,234 +27,148 @@
   html, body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 169, 106, 0.12), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(201, 169, 106, 0.06), transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 1;
-    mix-blend-mode: overlay;
   }
 
   .wrap {
-    position: relative;
-    z-index: 2;
     max-width: 440px;
     margin: 0 auto;
-    padding: 56px 24px 48px;
     min-height: 100vh;
+    min-height: 100svh;
+    padding: 24px 20px 28px;
     display: flex;
     flex-direction: column;
   }
 
-  .eyebrow {
+  /* Logo B: block monogram lockup */
+  .brand {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 12px;
-    font-size: 10px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    opacity: 0;
-    animation: rise 0.8s 0.1s ease forwards;
+    flex-wrap: wrap;
   }
 
-  .eyebrow::before,
-  .eyebrow::after {
-    content: '';
-    height: 1px;
-    width: 32px;
-    background: var(--line-strong);
-  }
-
-  .monogram {
-    margin: 32px auto 20px;
-    width: 84px;
-    height: 84px;
-    border: 1px solid var(--line-strong);
-    border-radius: 50%;
+  .lockup {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    opacity: 0;
-    animation: rise 0.8s 0.2s ease forwards;
+    gap: 12px;
   }
 
-  .monogram::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    border: 1px solid var(--line);
-    border-radius: 50%;
+  .mark {
+    width: 52px;
+    height: 52px;
+    background: var(--accent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 0 4px 6px;
+    flex-shrink: 0;
   }
 
-  .monogram span {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: 30px;
-    letter-spacing: -0.02em;
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-style: italic;
+  .mark span {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 33px;
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    color: var(--bg);
+  }
+
+  .lockup-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .lockup-name {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .lockup-role {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: var(--ink-dim);
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    color: var(--ink-dim);
+  }
+
+  /* To add a photo later: place <img class="photo" src="photo.jpg" alt="JJ Maya training"> here. */
+  .photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+  }
+
+  .hero {
+    margin-top: 48px;
+  }
+
+  .bar {
+    width: 28px;
+    height: 4px;
+    background: var(--accent);
   }
 
   h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: 42px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    text-align: center;
-    opacity: 0;
-    animation: rise 0.8s 0.3s ease forwards;
+    margin-top: 18px;
+    font-family: 'Anton', Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(34px, 11.2vw, 50px);
+    line-height: 1.02;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
   }
 
-  h1 em {
-    font-style: italic;
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  h1 span { color: var(--accent); }
+
+  .lede {
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--ink-soft);
   }
 
-  .tagline {
-    text-align: center;
-    margin-top: 14px;
-    font-size: 13px;
+  .proof {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--ink-dim);
-    letter-spacing: 0.08em;
-    line-height: 1.6;
-    opacity: 0;
-    animation: rise 0.8s 0.4s ease forwards;
-  }
-
-  .tagline strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 36px 0 28px;
-    opacity: 0;
-    animation: rise 0.8s 0.5s ease forwards;
-  }
-
-  .divider .dot {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    transform: rotate(45deg);
-  }
-
-  .divider .dash {
-    height: 1px;
-    width: 40px;
-    background: var(--line-strong);
   }
 
   .links {
+    margin-top: 28px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .link {
-    --delay: 0s;
-    position: relative;
+    min-height: 60px;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px 22px;
-    background: var(--card);
-    border: 1px solid var(--line);
+    gap: 14px;
+    background: var(--panel);
     color: var(--ink);
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    overflow: hidden;
-    opacity: 0;
-    animation: rise 0.7s var(--delay) ease forwards;
+    transition: background 0.2s ease, transform 0.2s ease;
   }
 
-  .link::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(201, 169, 106, 0.08), transparent 50%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--gold);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-  .link:hover {
-    border-color: var(--line-strong);
-    transform: translateX(4px);
-    background: rgba(201, 169, 106, 0.04);
-  }
-
-  .link:hover::before { opacity: 1; }
-  .link:hover::after { transform: scaleY(1); }
-
-  .link .icon {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--line);
-    color: var(--gold);
-    transition: all 0.4s ease;
-  }
-
-  .link:hover .icon {
-    border-color: var(--gold);
-    color: var(--gold-bright);
-  }
-
-  .link .icon svg {
-    width: 18px;
-    height: 18px;
-  }
+  .link:hover { background: var(--panel-hover); transform: translateX(3px); }
+  .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   .link .text {
     flex: 1;
@@ -262,203 +178,113 @@
   }
 
   .link .label {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
   .link .sub {
-    font-size: 11px;
-    color: var(--ink-dim);
-    letter-spacing: 0.08em;
+    font-size: 13px;
+    color: var(--ink-mute);
   }
 
-  .link .arrow {
-    color: var(--ink-dim);
-    transition: all 0.4s ease;
-    font-family: 'Fraunces', serif;
-    font-size: 18px;
-  }
+  .link svg { flex-shrink: 0; }
 
-  .link:hover .arrow {
-    color: var(--gold);
-    transform: translateX(3px);
-  }
-
-  .link.featured {
-    background: linear-gradient(135deg, rgba(201, 169, 106, 0.12), rgba(201, 169, 106, 0.04));
-    border-color: var(--line-strong);
-  }
-
-  .link.featured .icon {
-    background: var(--gold);
+  .link.primary {
+    min-height: 64px;
+    background: var(--accent);
     color: var(--bg);
-    border-color: var(--gold);
   }
 
-  .link.featured .label {
-    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .link.featured::before {
-    background: linear-gradient(135deg, rgba(201, 169, 106, 0.15), transparent);
-    opacity: 1;
-  }
-
-  .badge {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 8px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    background: rgba(201, 169, 106, 0.1);
-    padding: 3px 7px;
-    border: 1px solid var(--line-strong);
-  }
-
-  .link.coming-soon {
-    cursor: default;
-    pointer-events: none;
-  }
-
-  .link.coming-soon .arrow {
-    display: none;
-  }
-
-  .badge.pulse {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .badge.pulse::before {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--gold-bright);
-    box-shadow: 0 0 0 0 var(--gold-bright);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(232, 201, 136, 0.6); }
-    70% { box-shadow: 0 0 0 6px rgba(232, 201, 136, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(232, 201, 136, 0); }
-  }
+  .link.primary:hover { background: #FF6E3A; }
+  .link.primary .label { font-size: 16px; }
+  .link.primary .sub { color: var(--bg); font-weight: 500; }
 
   footer {
     margin-top: auto;
-    padding-top: 48px;
-    text-align: center;
-    opacity: 0;
-    animation: rise 0.8s 1.2s ease forwards;
-  }
-
-  footer .sig {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 13px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     color: var(--ink-dim);
-    letter-spacing: 0.05em;
   }
 
-  footer .loc {
-    margin-top: 6px;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--ink-dim);
-    text-transform: uppercase;
+  @media (max-width: 359px) {
+    .tag { display: none; }
   }
 
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 380px) {
-    h1 { font-size: 36px; }
-    .wrap { padding: 40px 18px 36px; }
-    .link { padding: 18px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .brand, .hero, .links, footer {
+      opacity: 0;
+      animation: rise 0.6s ease forwards;
+    }
+    .hero { animation-delay: 0.08s; }
+    .links { animation-delay: 0.16s; }
+    footer { animation-delay: 0.24s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="eyebrow">JJ Maya</div>
-
-  <div class="monogram"><span>JM</span></div>
-
-  <h1>Build the body.<br><em>Sharpen the mind.</em></h1>
-
-  <p class="tagline">
-    Physique coaching for busy professionals<br>
-    <strong>Natural bodybuilder · 5+ years coaching in person</strong>
-  </p>
-
-  <div class="divider">
-    <div class="dash"></div>
-    <div class="dot"></div>
-    <div class="dash"></div>
-  </div>
-
-  <div class="links">
-
-    <a href="https://forms.gle/QXZoxpBPrcV83y5o9" class="link featured" style="--delay: 0.6s;" target="_blank" rel="noopener">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="9" y1="13" x2="15" y2="13"/>
-          <line x1="9" y1="17" x2="15" y2="17"/>
-        </svg>
+  <header class="brand">
+    <div class="lockup">
+      <div class="mark" aria-hidden="true"><span>JM</span></div>
+      <div class="lockup-text">
+        <span class="lockup-name">JJ MAYA</span>
+        <span class="lockup-role">PHYSIQUE COACH</span>
       </div>
-      <div class="text">
-        <div class="label">Apply for coaching</div>
-        <div class="sub">1:1 online physique coaching</div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
+    </div>
+    <span class="tag">ONLINE COACHING</span>
+  </header>
 
-    <a href="https://www.instagram.com/_jjmayafit_" class="link" style="--delay: 0.7s;" target="_blank" rel="noopener">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-        </svg>
-      </div>
-      <div class="text">
-        <div class="label">Instagram</div>
-        <div class="sub">Daily behind-the-scenes</div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
+  <main class="hero">
+    <div class="bar" aria-hidden="true"></div>
+    <h1>Build the body.<br><span>Sharpen the mind.</span></h1>
+    <p class="lede">Physique coaching for busy professionals.</p>
+    <p class="proof">Natural bodybuilder · 5+ years coaching</p>
 
-    <a href="https://www.tiktok.com/@jjmayafit" class="link" style="--delay: 0.8s;">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-        </svg>
-      </div>
-      <div class="text">
-        <div class="label">TikTok</div>
-        <div class="sub">Training for a real calendar</div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
+    <nav class="links" aria-label="Links">
+      <a href="https://forms.gle/QXZoxpBPrcV83y5o9" class="link primary" target="_blank" rel="noopener">
+        <span class="text">
+          <span class="label">Apply for coaching</span>
+          <span class="sub">1:1 online physique coaching</span>
+        </span>
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
 
-  </div>
+      <a href="https://www.instagram.com/_jjmayafit_" class="link" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span class="text">
+          <span class="label">Instagram</span>
+          <span class="sub">Daily behind-the-scenes</span>
+        </span>
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" stroke-width="2.4" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@jjmayafit" class="link">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        <span class="text">
+          <span class="label">TikTok</span>
+          <span class="sub">Training for a real calendar</span>
+        </span>
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" stroke-width="2.4" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </nav>
+  </main>
 
   <footer>
-    <div class="sig">Train with intention</div>
-    <div class="loc">Online coaching</div>
+    <span>TRAIN WITH INTENTION</span>
+    <span>JJ MAYA</span>
   </footer>
 
 </div>
